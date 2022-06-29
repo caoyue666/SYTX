@@ -40,7 +40,7 @@ public class Test01 {
 
         //第四题测试
         // D 购买的水果斤数 (水果斤数为大于等于 0 的整数)，计算并返回所购买商品的总价。
-        int total1D = Test01.total1D(10,10,10, sm, sm1,sm2);
+        int total1D = Test01.total1D(0,0,10, sm, sm1,sm2);
         System.out.println("D顾客一共花了"+total1D+"元");
 
 
@@ -67,9 +67,12 @@ public class Test01 {
     public static  int total1D(int i,int b,int c,Supermarket sm,Supermarket sm1,Supermarket sm2){
 
         int a = (int) ((i*sm.getPrice()*0.8)+(sm1.getPrice()*b)+(sm2.getPrice()*c)) ;
-        if(a>=100){
+
+        if(a>=200){
+            a= (int)(a*0.85);
+        } else{
             a=a-10;
-        }
+        };
         return a;
     }
 
